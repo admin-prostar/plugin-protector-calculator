@@ -1,0 +1,28 @@
+// 3 column (contact page)
+// ----------------------------------------------
+
+.layout-3col {
+    .row();
+}
+.layout-3col-complementary-small {
+    .make-md-column(2);
+    padding-right: 2em !important;
+
+    h3 {
+        .Font-size(1);
+    }
+}
+.layout-3col-article {
+    .make-md-column(5);
+}
+.layout-3col-complementary-large {
+    .make-md-column(4);
+    .make-md-column-offset(1);
+}
+
+@media(max-width: @screen-sm-max) {
+    .layout-3col-complementary-small,
+    .layout-3col-article {
+        .Spacing-margin(false,true);
+    }
+}

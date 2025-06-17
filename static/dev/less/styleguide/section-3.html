@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Styleguide Example</title>
+  <link rel="stylesheet" href="public/kss.css" type="text/css" />
+  <link rel="stylesheet" href="public/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../../dist/css/core.css">
+  <!--[if lt IE 9]>
+    <script src="public/html5shiv.js"></script>
+  <![endif]-->
+  <script src="/static/dist/js/modernizr-2.8.3.min.js"></script>
+</head>
+<body id="styleguide">
+  <header class="styleguide-header styleguide-reset">
+    <div class="styleguide-container">
+      <h1>Styleguide</h1>
+    </div>
+  </header>
+  <div class="styleguide-container">
+    <nav class="styleguide-menu styleguide-reset">
+       <ul class="styleguide-menu-list" data-kss-ref="3">
+        <li><a href="./">0. Overview</a></li>
+        <li><a href="section-1.html">1. Mixins</a></li>
+        <li><a href="section-2.html">2. Helpers</a></li>
+        <li><a href="section-3.html">3. Forms</a></li>
+        <li><a href="section-4.html">4. Buttons</a></li>
+        <li><a href="section-5.html">5. Grids</a></li>
+        <li><a href="section-6.html">6. Media Element</a></li>
+        <li><a href="section-7.html">7. Carousel</a></li>
+        <li><a href="section-8.html">8. Type</a></li>
+        <li><a href="section-9.html">9. Widgets</a></li>
+        <li><a href="section-10.html">10. Breadcrumbs</a></li>
+        <li><a href="section-11.html">11. Pills</a></li>
+        <li><a href="section-12.html">12. Accordion</a></li>
+      </ul>
+    </nav>
+
+    <div class="styleguide-content">
+
+      <header class="example-header styleguide-reset">
+        <h1>Forms</h1>
+      </header>
+      <div class="styleguide-example">
+        <header class="styleguide-example-header styleguide-reset">
+          <h3>3.1.1 <em>Input</em></h3>
+        </header>
+
+        <div class="styleguide-element">
+          <div class="form__row">
+    <label for="">Text input</label>
+    <input type="text" name="" id="" placeholder="">
+</div>
+<div class="form__row">
+    <label for="">Date input</label>
+    <input type="date" name="" id="" placeholder="">
+</div>
+<div class="form__row">
+    <label for="">Date time input</label>
+    <input type="datetime" name="" id="" placeholder="">
+</div>
+<div class="form__row">
+    <label for="">Email input</label>
+    <input type="email" name="" id="" placeholder="">
+</div>
+<div class="form__row">
+    <label for="">Month input</label>
+    <input type="month" name="" id="" placeholder="">
+</div>
+<div class="form__row">
+    <label for="">Number input</label>
+    <input type="number" name="" id="" placeholder="">
+</div>
+<div class="form__row">
+    <label for="">Password input</label>
+    <input type="password" name="" id="" placeholder="">
+</div>
+<div class="form__row">
+    <label for="">Tel input</label>
+    <input type="tel" name="" id="" placeholder="">
+</div>
+<div class="form__row">
+    <label for="">Time input</label>
+    <input type="time" name="" id="" placeholder="">
+</div>
+<div class="form__row">
+    <label for="">URL input</label>
+    <input type="url" name="" id="" placeholder="">
+</div>
+<div class="form__row">
+    <label for="">Week input</label>
+    <input type="week" name="" id="" placeholder="">
+</div>
+<div class="form__row">
+    <label for="">Submit input</label>
+    <input type="submit" name="" id="" value="Submit">
+</div>
+        </div>
+
+
+        <div class="styleguide-html styleguide-reset">
+          <div class="styleguide-html-highlight">
+            <pre><code class="xml">&lt;div class=&quot;form__row&quot;&gt;
+    &lt;label for=&quot;&quot;&gt;Text input&lt;/label&gt;
+    &lt;input type=&quot;text&quot; name=&quot;&quot; id=&quot;&quot; placeholder=&quot;&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;form__row&quot;&gt;
+    &lt;label for=&quot;&quot;&gt;Date input&lt;/label&gt;
+    &lt;input type=&quot;date&quot; name=&quot;&quot; id=&quot;&quot; placeholder=&quot;&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;form__row&quot;&gt;
+    &lt;label for=&quot;&quot;&gt;Date time input&lt;/label&gt;
+    &lt;input type=&quot;datetime&quot; name=&quot;&quot; id=&quot;&quot; placeholder=&quot;&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;form__row&quot;&gt;
+    &lt;label for=&quot;&quot;&gt;Email input&lt;/label&gt;
+    &lt;input type=&quot;email&quot; name=&quot;&quot; id=&quot;&quot; placeholder=&quot;&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;form__row&quot;&gt;
+    &lt;label for=&quot;&quot;&gt;Month input&lt;/label&gt;
+    &lt;input type=&quot;month&quot; name=&quot;&quot; id=&quot;&quot; placeholder=&quot;&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;form__row&quot;&gt;
+    &lt;label for=&quot;&quot;&gt;Number input&lt;/label&gt;
+    &lt;input type=&quot;number&quot; name=&quot;&quot; id=&quot;&quot; placeholder=&quot;&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;form__row&quot;&gt;
+    &lt;label for=&quot;&quot;&gt;Password input&lt;/label&gt;
+    &lt;input type=&quot;password&quot; name=&quot;&quot; id=&quot;&quot; placeholder=&quot;&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;form__row&quot;&gt;
+    &lt;label for=&quot;&quot;&gt;Tel input&lt;/label&gt;
+    &lt;input type=&quot;tel&quot; name=&quot;&quot; id=&quot;&quot; placeholder=&quot;&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;form__row&quot;&gt;
+    &lt;label for=&quot;&quot;&gt;Time input&lt;/label&gt;
+    &lt;input type=&quot;time&quot; name=&quot;&quot; id=&quot;&quot; placeholder=&quot;&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;form__row&quot;&gt;
+    &lt;label for=&quot;&quot;&gt;URL input&lt;/label&gt;
+    &lt;input type=&quot;url&quot; name=&quot;&quot; id=&quot;&quot; placeholder=&quot;&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;form__row&quot;&gt;
+    &lt;label for=&quot;&quot;&gt;Week input&lt;/label&gt;
+    &lt;input type=&quot;week&quot; name=&quot;&quot; id=&quot;&quot; placeholder=&quot;&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;form__row&quot;&gt;
+    &lt;label for=&quot;&quot;&gt;Submit input&lt;/label&gt;
+    &lt;input type=&quot;submit&quot; name=&quot;&quot; id=&quot;&quot; value=&quot;Submit&quot;&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="styleguide-example">
+        <header class="styleguide-example-header styleguide-reset">
+          <h3>3.1.2 <em>Radio</em></h3>
+        </header>
+        <div class="styleguide-description styleguide-markdown-body styleguide-reset">
+          <p><a href="https://github.com/fronteed/iCheck">https://github.com/fronteed/iCheck</a></p>
+
+
+          <ul class="styleguide-modifier">
+          </ul>
+        </div>
+
+        <div class="styleguide-element">
+          <div class="form__row">
+    <label for="">Radio input</label>
+    <input type="radio" name="" id="">
+</div>
+        </div>
+
+
+        <div class="styleguide-html styleguide-reset">
+          <div class="styleguide-html-highlight">
+            <pre><code class="xml">&lt;div class=&quot;form__row&quot;&gt;
+    &lt;label for=&quot;&quot;&gt;Radio input&lt;/label&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;&quot; id=&quot;&quot;&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="styleguide-example">
+        <header class="styleguide-example-header styleguide-reset">
+          <h3>3.1.3 <em>Checkbox</em></h3>
+        </header>
+        <div class="styleguide-description styleguide-markdown-body styleguide-reset">
+          <p><a href="https://github.com/fronteed/iCheck">https://github.com/fronteed/iCheck</a></p>
+
+
+          <ul class="styleguide-modifier">
+          </ul>
+        </div>
+
+        <div class="styleguide-element">
+          <div class="form__row">
+    <label for="">Checkbox input</label>
+    <input type="checkbox" name="" id="">
+</div>
+        </div>
+
+
+        <div class="styleguide-html styleguide-reset">
+          <div class="styleguide-html-highlight">
+            <pre><code class="xml">&lt;div class=&quot;form__row&quot;&gt;
+    &lt;label for=&quot;&quot;&gt;Checkbox input&lt;/label&gt;
+    &lt;input type=&quot;checkbox&quot; name=&quot;&quot; id=&quot;&quot;&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="styleguide-example">
+        <header class="styleguide-example-header styleguide-reset">
+          <h3>3.1.4 <em>Textarea</em></h3>
+        </header>
+
+        <div class="styleguide-element">
+          <textarea name="" id=""></textarea>
+        </div>
+
+
+        <div class="styleguide-html styleguide-reset">
+          <div class="styleguide-html-highlight">
+            <pre><code class="xml">&lt;textarea name=&quot;&quot; id=&quot;&quot;&gt;&lt;/textarea&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="styleguide-example">
+        <header class="styleguide-example-header styleguide-reset">
+          <h3>3.1.5 <em>Select</em></h3>
+        </header>
+        <div class="styleguide-description styleguide-markdown-body styleguide-reset">
+          <p>Plugin: <a href="http://gregfranko.com/jquery.selectBoxIt.js">http://gregfranko.com/jquery.selectBoxIt.js</a></p>
+
+
+          <ul class="styleguide-modifier">
+          </ul>
+        </div>
+
+        <div class="styleguide-element">
+          <div class="styled-selects">
+<select>
+    <option value="val1">Value 1</option>
+    <option value="val2">Value 2</option>
+</select>
+</div>
+        </div>
+
+
+        <div class="styleguide-html styleguide-reset">
+          <div class="styleguide-html-highlight">
+            <pre><code class="xml">&lt;div class=&quot;styled-selects&quot;&gt;
+&lt;select&gt;
+    &lt;option value=&quot;val1&quot;&gt;Value 1&lt;/option&gt;
+    &lt;option value=&quot;val2&quot;&gt;Value 2&lt;/option&gt;
+&lt;/select&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="styleguide-example">
+        <header class="styleguide-example-header styleguide-reset">
+          <h3>3.1.6 <em>Button</em></h3>
+        </header>
+
+        <div class="styleguide-element">
+          <button type="submit">Submit</button>
+        </div>
+
+
+        <div class="styleguide-html styleguide-reset">
+          <div class="styleguide-html-highlight">
+            <pre><code class="xml">&lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+      <header class="example-header styleguide-reset">
+        <h1>Inline form elements</h1>
+      </header>
+      <div class="styleguide-example">
+        <header class="styleguide-example-header styleguide-reset">
+          <h3>3.1.8 <em>Tabbed radio buttons</em></h3>
+        </header>
+
+        <div class="styleguide-element">
+          <label for="position-left" class="radio--tab radio--tab--no-border first">
+    <input type="radio" name="position" id="position-left" class="unstyled">
+    <span>Left</span>
+</label>
+<label for="position-centre" class="radio--tab radio--tab--no-border is-active">
+    <input type="radio" name="position" id="position-centre" class="unstyled">
+    <span>Centre</span>
+</label>
+<label for="position-right" class="radio--tab last">
+    <input type="radio" name="position" id="position-right" class="unstyled">
+    <span>Right</span>
+</label>
+        </div>
+
+        <div class="styleguide-element styleguide-modifier">
+          <span class="styleguide-modifier-name">.radio--tab--no-border</span>
+          <label for="position-left" class="radio--tab radio--tab--no-border first">
+    <input type="radio" name="position" id="position-left" class="unstyled">
+    <span>Left</span>
+</label>
+<label for="position-centre" class="radio--tab radio--tab--no-border is-active">
+    <input type="radio" name="position" id="position-centre" class="unstyled">
+    <span>Centre</span>
+</label>
+<label for="position-right" class="radio--tab last">
+    <input type="radio" name="position" id="position-right" class="unstyled">
+    <span>Right</span>
+</label>
+        </div>
+        <div class="styleguide-element styleguide-modifier">
+          <span class="styleguide-modifier-name">.is-active</span>
+          <label for="position-left" class="radio--tab radio--tab--no-border first">
+    <input type="radio" name="position" id="position-left" class="unstyled">
+    <span>Left</span>
+</label>
+<label for="position-centre" class="radio--tab radio--tab--no-border is-active">
+    <input type="radio" name="position" id="position-centre" class="unstyled">
+    <span>Centre</span>
+</label>
+<label for="position-right" class="radio--tab last">
+    <input type="radio" name="position" id="position-right" class="unstyled">
+    <span>Right</span>
+</label>
+        </div>
+
+        <div class="styleguide-html styleguide-reset">
+          <div class="styleguide-html-highlight">
+            <pre><code class="xml">&lt;label for=&quot;position-left&quot; class=&quot;radio--tab radio--tab--no-border first&quot;&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;position&quot; id=&quot;position-left&quot; class=&quot;unstyled&quot;&gt;
+    &lt;span&gt;Left&lt;/span&gt;
+&lt;/label&gt;
+&lt;label for=&quot;position-centre&quot; class=&quot;radio--tab radio--tab--no-border is-active&quot;&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;position&quot; id=&quot;position-centre&quot; class=&quot;unstyled&quot;&gt;
+    &lt;span&gt;Centre&lt;/span&gt;
+&lt;/label&gt;
+&lt;label for=&quot;position-right&quot; class=&quot;radio--tab last&quot;&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;position&quot; id=&quot;position-right&quot; class=&quot;unstyled&quot;&gt;
+    &lt;span&gt;Right&lt;/span&gt;
+&lt;/label&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="styleguide-example">
+        <header class="styleguide-example-header styleguide-reset">
+          <h3>3.1.9 <em>Form append to inputs</em></h3>
+        </header>
+
+        <div class="styleguide-element">
+          <div class="form--append">
+    <label for="">Custom Offset</label>
+    <input type="text"><span class="form--append__appendage">mm</span>
+</div>
+        </div>
+
+
+        <div class="styleguide-html styleguide-reset">
+          <div class="styleguide-html-highlight">
+            <pre><code class="xml">&lt;div class=&quot;form--append&quot;&gt;
+    &lt;label for=&quot;&quot;&gt;Custom Offset&lt;/label&gt;
+    &lt;input type=&quot;text&quot;&gt;&lt;span class=&quot;form--append__appendage&quot;&gt;mm&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="styleguide-footer styleguide-reset styleguide-container">
+    <p>Created using <a href="https://github.com/hughsk/kss-node">kss-node</a>.</p>
+    <p>Designed by <a href="https://github.com/">GitHub</a>, Adjusted by 1026</p>
+  </footer>
+  <script src="public/kss.js"></script>
+  <script src="public/highlight.pack.js"></script>
+  <script src="public/jquery-1.10.2.min.js"></script>
+  <script src="public/styleguide.js"></script>
+  <script src="../../../dist/js/combined.min.js?v=0"></script>
+</body>
+</html>
+

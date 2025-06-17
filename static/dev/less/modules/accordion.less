@@ -1,0 +1,515 @@
+// Accordion
+//
+// Styleguide 12.
+
+
+// Default Accordion
+//
+// .accordion--blue - Blue variation of accordion
+//
+// Markup:
+// <div class="accordion {$modifiers}">
+//     <a href="#accessories" class="accordion__title accordion-is-expanded">
+//         <h3>Accessories</h3>
+//         <i class="icon icon_plus"></i>
+//     </a>
+//     <div class="accordion__content accordion-is-expanded">
+//         <p>Content content content</p>
+//         <p>Content content content</p>
+//         <p>Content content content</p>
+//         <p>Content content content</p>
+//     </div>
+//     <a href="#accessories" class="accordion__title">
+//         <h3>Accessories</h3>
+//         <i class="icon icon_plus"></i>
+//     </a>
+//     <div class="accordion__content">
+//         <p>Content content content</p>
+//         <p>Content content content</p>
+//         <p>Content content content</p>
+//         <p>Content content content</p>
+//     </div>
+// </div>
+//
+// Styleguide 12.1.1.
+
+.calculator {
+
+  .accordion__title,
+  .accordion__content {
+    background: #fff;
+  }
+  .accordion__title {
+    padding-right: 60px;
+    position: relative;
+    text-decoration: none;
+    border: 0;
+    display: block;
+    padding: @accordion-padding;
+    color: @blue-mid;
+
+    h3 {
+      .Font-size(1);
+      margin: 0;
+    }
+    .icon_plus {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      font-size: 20px;
+      margin-top: -10px;
+      color: @blue-mid;
+      transition: @transition-color;
+
+      &:hover {
+        color: @blue-dark;
+      }
+    }
+  }
+  .accordion-is-expanded > .icon_plus,
+  .accordion-is-expanded.accordion__title > .icon_plus {
+    .icon-minus;
+  }
+  .accordion__content {
+    margin-bottom: 1.5em;
+    padding-left: @accordion-padding;
+    padding-right: @accordion-padding;
+  }
+  .accordion__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0;
+  }
+  .accordion-is-expanded.accordion__content {
+    max-height: 2000px;
+    transition: max-height 1.5s;
+  }
+  .accordion--blue {
+    .accordion__title,
+    .accordion__content {
+      background: @blue-light;
+    }
+    .accordion__title {
+      color: @base-font-color;
+    }
+  }
+  .accordion--nopad,
+  .accordion--nopad .accordion__content {
+    padding: 0;
+  }
+
+  // Selector accordion
+  // ----------------------------------------------
+
+  .accordion--selector, .calculator__finishes {
+    .accordion__content {
+      p {
+        //margin: 1.3em 0;
+        margin-bottom: 2em !important;
+      }
+    }
+  }
+
+  .accordion--selector {
+    margin: 0 -@accordion-padding;
+
+    .accordion__content {
+      margin-bottom: 0;
+    }
+
+    // Expanded
+    .accordion__content.accordion-is-expanded,
+    .accordion__title.accordion-is-expanded {
+      color: @blue-mid;
+      background: @blue2;
+    }
+    .accordion__title.accordion-is-expanded,
+    .accordion__title.accordion-is-expanded:before,
+    .accordion__title.accordion-is-expanded .accordion--selector__arrow {
+      border-color: @blue3;
+    }
+    .accordion__title.accordion-is-expanded .accordion--selector__arrow:before {
+      border-top: 0;
+      border-bottom: 5px solid @blue-dark;
+    }
+    .accordion__content.accordion-is-expanded {
+      border-bottom: 1px solid @blue3;
+    }
+    .accordion-is-expanded .icheckbox {
+      background-position: -179px 0;
+    }
+    .accordion-is-expanded .icheckbox.checked {
+      background-position: -201px 0;
+    }
+  }
+  .accordion--selector__arrow {
+    width: 5.7em;
+    display: block;
+    border-left: 1px solid @cream;
+    cursor: pointer;
+
+    &:before {
+      .Arrow(top, 5px, @blue-mid);
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -2px 0 0 -5px;
+    }
+  }
+  .accordion--selector__button {
+    .btn-pill;
+    position: absolute;
+    top: 50%;
+    right: 1em;
+    margin-top: -.8em;
+  }
+
+  .accordion__table--dimensions {
+    li {
+      overflow: hidden;
+      padding: 0;
+      &:before {
+        display: none;
+      }
+    }
+    div {
+      float: left;
+      width: 33.33%;
+      padding: 20px 1em;
+      display: block;
+      position: relative;
+    }
+    .accordion__table--2column div {
+      width: 50%;
+    }
+    // div:first-child {
+    //     width: 30%;
+    // }
+    // div:last-child {
+    //     width: 30%;
+    // }
+    div + div {
+      &:after {
+        content: '';
+        width: 1px;
+        height: 200px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: @cream;
+      }
+    }
+  }
+
+  .accordion__table--matrix {
+    .list--unstyled;
+    .clearfix();
+
+    li {
+      margin-bottom: 1px;
+    }
+
+    .accordion__table__header {
+      display: none;
+      div {
+        background: @cream-dark;
+      }
+    }
+    .accordion__table__subtitle {
+      font-weight: bold;
+      background: @cream-dark;
+      position: relative;
+
+      i {
+        position: absolute;
+        right: 2em;
+        top: 50%;
+        margin-top: -5px;
+      }
+    }
+    .accordion__table__subcontent {
+      max-height: 0;
+      transition: @transition-all;
+      overflow: hidden;
+
+      span:first-child {
+        border-right: 1px solid @cream;
+      }
+    }
+    div {
+      width: 100%;
+      display: block;
+      font-size: .8em;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid @cream;
+      .clearfix();
+
+      span {
+        padding: 10px 1em;
+        display: block;
+        width: 50%;
+        float: left;
+      }
+    }
+    .accordion__table__subsubtitle {
+      font-weight: bold;
+    }
+  }
+
+  .accordion__table__subcontent.accordion-is-expanded {
+    max-height: 500px;
+  }
+
+  // a blue styled version of the accordion used for /transform.html page
+
+  .accordion--version2 {
+    .accordion__title {
+      padding: 0;
+      background: none;
+      border-top: 2px solid @blue-dark;
+      .Clearfix();
+
+      .accordion__number {
+        padding: 1.4em;
+        width: 50px;
+        display: block;
+        background: @blue-mid;
+        color: #fff;
+        text-align: center;
+        position: absolute;
+        height: 100%;
+        left: 0;
+        top: 0;
+
+        b {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate3d(-50%, -50%, 0);
+        }
+      }
+      h3 {
+        display: block;
+        padding: 1.4em 3em 1.4em 1.4em;
+        float: right;
+        overflow: hidden;
+        width: ~"calc(100% - 50px)";
+        transition: @transition-all;
+        color: @blue-dark;
+      }
+      .icon_menu_down_arrow {
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        font-size: 12px;
+        margin-top: -5px;
+        color: @blue-dark;
+        transition: @transition-color;
+
+        &:hover {
+          color: @blue-dark;
+        }
+      }
+    }
+    .accordion__content {
+      margin-bottom: 0;
+      background: none;
+    }
+    .accordion__title.accordion-is-expanded h3 {
+      background: @blue-mid;
+      color: #fff;
+    }
+  }
+
+  .accordion--version2__img,
+  .accordion__content p:first-of-type {
+    padding-top: 1.4em;
+  }
+
+  .accordion--version2__img {
+    max-width: 30%;
+    margin-right: 1em;
+    margin-bottom: .5em;
+    float: left;
+  }
+
+  .accordion-is-expanded > .icon_menu_down_arrow,
+  .accordion-is-expanded.accordion__title > .icon_menu_down_arrow {
+    &:before {
+      transform: rotate(180deg);
+      display: block;
+      transform-origin: 50% 35%;
+      color: #fff;
+    }
+  }
+
+  @media (min-width: @screen-md-min) {
+
+    // accordion version2
+    .accordion--version2 {
+
+      .accordion--version2__img {
+        padding-top: 2px;
+        margin-right: 2em;
+      }
+      .accordion__content p:first-of-type {
+        padding-top: 2em;
+        padding-right: 2em;
+      }
+      .accordion__content {
+        padding: 0;
+      }
+    }
+
+    .accordion--version2__img {
+      margin-bottom: 0;
+      max-width: 300px;
+    }
+  }
+
+  @media (min-width: @screen-lg) {
+    .accordion__table--matrix {
+      .list--unstyled;
+
+      div {
+        float: left;
+        min-height: 50px;
+        display: table;
+
+        span {
+          width: 100%;
+          display: table-cell;
+          vertical-align: middle;
+          float: none;
+          border: none !important;
+        }
+      }
+      .accordion__table__subtitle {
+        clear: left;
+        text-align: right;
+        width: 15%;
+
+        i {
+          display: none;
+        }
+      }
+      .accordion__table__subcontent {
+        max-height: none;
+        div {
+          width: 16.66%;
+        }
+      }
+      .accordion__table--deviceonly {
+        display: none;
+      }
+      .accordion__table__subsubtitle {
+        display: none;
+      }
+      section {
+        width: 85%;
+        float: left;
+      }
+      div {
+        &:after {
+          content: '';
+          width: 1px;
+          height: 200px;
+          position: absolute;
+          left: 0;
+          top: 0;
+          background: @cream;
+        }
+      }
+      .accordion__table__header {
+        display: block;
+      }
+    }
+  }
+
+  // Color swatches variation
+
+  .accordion__table--colorswatch {
+    .Clearfix();
+
+    li {
+      position: relative;
+      padding: 20px;
+      &:before {
+        display: none;
+      }
+    }
+    li > span:first-child {
+      width: 100%;
+      padding-right: 60px;
+      border-right: none;
+    }
+  }
+  .square {
+    width: 33px;
+    height: 33px;
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: @transition-all;
+    padding: 0 !important;
+    border-bottom: none;
+    background: black;
+    img {
+      max-height: 100%;
+    }
+    &:hover {
+      .icon_search {
+        opacity: 1;
+      }
+    }
+    .icon_search {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      text-align: center;
+      color: #fff;
+      display: table;
+      background: fade(black, 20%);
+      backface-visibility: hidden;
+      transition: @transition-all;
+      &:before {
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+  }
+  .square > div {
+    width: 100%;
+    height: 100%;
+  }
+  a.zoomed.square {
+    width: 200px;
+    height: 200px;
+    right: -71px;
+    z-index: 2;
+
+    .icon_search {
+      background: transparent;
+      text-align: right;
+      font-size: 12px;
+      .icon_close();
+      &:before {
+        vertical-align: top;
+        padding: 12px 6px;
+      }
+    }
+  }
+
+  .accordion-is-expanded#swatches {
+    overflow: visible;
+  }
+
+}

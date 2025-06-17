@@ -1,0 +1,815 @@
+// Helpers
+//
+// Helpers are too generic to list all so checkout the helpers.less file.
+//
+// Styleguide 2.
+
+.CaeciliaCom-75Bold { font-family: CaeciliaCom-75Bold; font-weight: normal; font-style: normal; -webkit-font-smoothing: antialiased; }
+.default-font { font-family: @base-font-family; }
+.skip-links { position: absolute; left: -9999em; }
+.right { float: right; }
+.left { float: left; }
+.hidden { position: absolute; left: -9999px; }
+.inline { display: inline; }
+.img-responsive { max-width: 100%; height: auto; }
+.ta-center { text-align: center; }
+.hidden { position: absolute; left: -9999px; }
+.table { width: 100%; height: 100%; display: table; }
+.tr { width: 100%; display: table-row; }
+.th { display: table-cell; }
+.td { width: 100%; display: table-cell; vertical-align: middle; }
+.shrink { width: 1%; padding: 0; }
+.shrink img { display: block; }
+.serif { .CaeciliaCom-75Bold; }
+small .icon { .Font-size(.5); line-height: 1.8em; vertical-align: bottom; }
+.icon span { text-indent: -9999px; display: inline-block; }
+.icon_downloads, .icon_link-arrow, .icon_play_small { .Font-size(1.4); text-decoration: none; }
+.nomargin { margin: 0; }
+.nomargin-top { margin-top: 0!important; }
+.margin-bottom{ margin-bottom: 40px; }
+.placeholder { background: @blue-light; width: 100%; height: auto; }
+.overflow-visible { overflow: visible !important; }
+.note-asterix { margin-left: -9px; }
+.intro { font-size: 20px; .CaeciliaCom-75Bold; }
+
+@media(max-width:@screen-sm-max) {
+    .tablet-hidden { display: none!important; }
+}
+
+
+// Footnote
+// ----------------------------------------------
+
+.footnote {
+    .margin-bottom;
+
+    p {
+        margin-bottom: 10px;
+    }
+}
+
+
+// Bunnings links
+// ----------------------------------------------
+
+.bunnings {
+    color: #fff;
+    padding: 1.7em;
+    position: relative;
+    transition: @transition-background;
+}
+.bunnings--header {
+    &:hover,
+    &:focus {
+        background: @blue-dark;
+    }
+    span {
+        .sprite(@bunnings);
+        .Ir;
+    }
+}
+
+@media(max-width:@header-mobile-breakpoint-max) {
+    .bunnings--header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+}
+
+
+// Thumbnails
+//
+// Markup:
+//
+// Styleguide 2.1.1.
+// ----------------------------------------------
+
+.thumb__img {
+    position: relative;
+
+    img {
+        .Responsive;
+        display: block;
+        position: relative;
+        z-index: 1;
+    }
+}
+.thumb__link {
+    text-align: center;
+    text-decoration: none;
+    border: 0;
+    display: block;
+    position: relative;
+    transition: @transition-all;
+
+    &:hover,
+    &:focus {
+        color: @blue-mid;
+
+        .thumb__title {
+            border-color: @blue-mid;
+        }
+        .thumb__caption {
+            .Visible;
+        }
+    }
+    .td {
+        padding-top: 75px;
+    }
+    .system__icon {
+        position: absolute;
+        top: 2em;
+        right: 2em;
+        z-index: 2;
+    }
+}
+.limbo .thumb__caption:extend(.thumb__link:hover .thumb__caption){
+    span { opacity: 0; }
+}
+.thumb__title,
+.thumb__subtitle,
+.thumb__notes {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.thumb__title {
+    .Font-size(1.44);
+    .Border(2px);
+    color: @blue-dark;
+    margin-top: 1.5em;
+    margin-bottom: .2em;
+    padding-top: 1.5em;
+    transition: border .25s;
+}
+.thumb__subtitle {
+    margin-bottom: 1em;
+}
+.thumb__caption {
+    .Invisible;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    background: url(../../img/overlay-blue.png);
+    background: rgba(0,166,199,.8);
+    color: #fff;
+
+    span {
+        border-bottom: 1px solid #fff;
+        border-bottom: 1px solid rgba(255,255,255,.5);
+        opacity: 1;
+        transition: .5s;
+    }
+    .icon {
+        display: block;
+        font-size: 40px;
+        margin-top: .35em;
+        margin-bottom: 1.8em;
+        transition: @transition-all;
+    }
+}
+@media(min-width:@screen-sm-min) {
+  .thumb__notes {
+      margin-bottom: 0;
+  }
+}
+@media(min-width:@screen-sm-min) and (max-width:@screen-md-max) {
+    .thumb__caption .icon {
+        margin-bottom: .8em;
+    }
+    .thumb__link .td {
+        padding-bottom: 2.8em;
+    }
+}
+
+
+// System icons
+//
+// .system__icon--large  - 55px wide 24px high top and bottom peaks
+// .system__icon--medium - 37px wide 17px high top and bottom peaks
+//
+// Markup:
+// <span class="system__icon system__icon--large">FF-M</span>
+//
+// Styleguide 2.1.2.
+// ----------------------------------------------
+
+.system__icon {
+    position: relative;
+    display: inline-block;
+    background: @yellow;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+
+    //&:before,
+    //&:after {
+    //    position: absolute;
+    //    left: 0;
+    //    content: '';
+    //    display: block;
+    //}
+    //&:before {
+    //    border-bottom-style: solid;
+    //    border-bottom-color: @yellow;
+    //    border-left-style: solid;
+    //    border-left-color: transparent;
+    //    box-shadow: 0 1px 0 0 @yellow; /* Hack for when browser is zoomed in a bit */
+    //}
+    //&:after {
+    //    border-top-style: solid;
+    //    border-top-color: @yellow;
+    //    border-right-style: solid;
+    //    border-right-color: transparent;
+    //    box-shadow: 0 -1px 0 0 @yellow; /* Hack for when browser is zoomed in a bit */
+    //}
+}
+.system__icon--large {
+    width: 55px;
+    margin: 24px 0;
+
+    &:before {
+        border-left-width: 55px;
+        border-bottom-width: 24px;
+        top: -24px;
+    }
+    &:after {
+        border-right-width: 55px;
+        border-top-width: 24px;
+        bottom: -24px;
+    }
+}
+.system__icon--medium {
+    width: 3.36em;
+    margin: 1.545em 0;
+    font-size: 11px;
+    padding: 1.3em 0 1.1em 0;
+
+    &:before {
+        border-left-width: 3.39em;
+        border-bottom-width: 1.545em;
+        top: -1.545em;
+    }
+    &:after {
+        border-right-width: 3.39em;
+        border-top-width: 1.545em;
+        bottom: -1.545em;
+    }
+}
+.system__icon--small {
+    width: 3em;
+    margin: 1.545em 0;
+    font-size: 9px;
+    padding: .3em 0;
+
+    &:before {
+        border-left-width: 3em;
+        border-bottom-width: 1.545em;
+        top: -1.545em;
+    }
+    &:after {
+        border-right-width: 3em;
+        border-top-width: 1.545em;
+        bottom: -1.545em;
+    }
+}
+
+.system__icon--green {
+    background: @green;
+
+    &:before { border-bottom-color: @green; box-shadow: 0 1px 0 0 @green; /* Hack for when browser is zoomed in a bit */ }
+    &:after { border-top-color: @green; box-shadow: 0 -1px 0 0 @green; /* Hack for when browser is zoomed in a bit */ }
+}
+.system__icon--orange {
+    background: @orange;
+
+    &:before { border-bottom-color: @orange; box-shadow: 0 1px 0 0 @orange; /* Hack for when browser is zoomed in a bit */ }
+    &:after { border-top-color: @orange; box-shadow: 0 -1px 0 0 @orange; /* Hack for when browser is zoomed in a bit */ }
+}
+.system__icon--red {
+    background: @red;
+
+    &:before { border-bottom-color: @red; box-shadow: 0 1px 0 0 @red; /* Hack for when browser is zoomed in a bit */ }
+    &:after { border-top-color: @red; box-shadow: 0 -1px 0 0 @red; /* Hack for when browser is zoomed in a bit */ }
+}
+.system__icon--green {
+    background: @green;
+
+    &:before { border-bottom-color: @green; box-shadow: 0 1px 0 0 @green; /* Hack for when browser is zoomed in a bit */ }
+    &:after { border-top-color: @green; box-shadow: 0 -1px 0 0 @green; /* Hack for when browser is zoomed in a bit */ }
+}
+.system__icon--pink {
+    background: @pink;
+
+    &:before { border-bottom-color: @pink; box-shadow: 0 1px 0 0 @pink; /* Hack for when browser is zoomed in a bit */ }
+    &:after { border-top-color: @pink; box-shadow: 0 -1px 0 0 @pink; /* Hack for when browser is zoomed in a bit */ }
+}
+.system__icon--forest {
+    background: @forest;
+
+    &:before { border-bottom-color: @forest; box-shadow: 0 1px 0 0 @forest; /* Hack for when browser is zoomed in a bit */ }
+    &:after { border-top-color: @forest; box-shadow: 0 -1px 0 0 @forest; /* Hack for when browser is zoomed in a bit */ }
+}
+
+@media(max-width:@screen-sm-max) {
+    .nav .system__icon {
+        width: 20px;
+        font-size: 7px;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 2.7em;
+        margin-top: -10px;
+
+        &:before {
+            border-left-width: 20px;
+            border-bottom-width: 7px;
+            top: -7px;
+        }
+        &:after {
+            border-right-width: 20px;
+            border-top-width: 7px;
+            bottom: -7px;
+        }
+    }
+}
+
+
+// Feature list
+//
+// .feature-list--blue - Blue variation of list
+//
+// Markup:
+// <ul class="feature-list">
+//     <li>Content here</li>
+//     <li>Content here</li>
+// </ul>
+//
+// Styleguide 2.1.3.
+// ----------------------------------------------
+
+.feature-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    > p {
+      padding-left: 1.4em;
+      padding-right: 1em;
+      margin-bottom: .5em;
+      font-weight: bold;
+
+      &:last-child {
+        margin-bottom: 1em;
+      }
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    ul + p {
+      margin-top: 1.5em;
+    }
+    li {
+        .Border(1px, @cream);
+        margin: 0;
+        padding: 1em 1.4em 1em 3em;
+        position: relative;
+
+        &:before {
+            .Size(6px,6px);
+            border-radius: 6px;
+            content: '';
+            position: absolute;
+            top: 1.4em;
+            left: 1.4em;
+            background: @blue;
+
+        }
+    }
+}
+.feature-list--blue {
+    li {
+        border-color: #b0e2f9;
+    }
+}
+
+
+// T bar
+//
+// Markup:
+// <ul class="tbar">
+//     <li class="tbar__left">Content here</li>
+//     <li class="tbar__right">Content here</li>
+// </ul>
+//
+// Styleguide 2.1.4.
+// ----------------------------------------------
+
+.tbar {
+    margin: 0 0 1.4em 0;
+    padding: 0;
+    list-style: none;
+    .Clearfix();
+    .Border(2px);
+
+    > li {
+        margin-bottom: 0;
+        padding-top: 1.5em;
+    }
+    p {
+        margin-bottom: 0;
+    }
+}
+@media(min-width:@screen-sm-min) {
+    .tbar > li {
+        width: 50%;
+        float: left;
+        padding-bottom: 1.5em;
+    }
+    .tbar__left {
+        padding-right: 2em;
+        position: relative;
+        height: 100%;
+        &:after{
+          content: "";
+          width: 2px;
+          background: @blue-dark;
+          height: 100%;
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+    }
+    .tbar__right {
+        padding-left: 2em;
+        position: relative;
+        &:after{
+          content: "";
+          width: 2px;
+          background: @blue-dark;
+          height: 100%;
+          position: absolute;
+          left: -2px;
+          top: 0;
+        }
+    }
+}
+@media(min-width:@screen-sm-min) {
+    .tbar > li:last-child h3 {
+        padding-left: 2em;
+    }
+}
+
+
+// T bar
+//
+// Markup:
+// <ul class="tbar">
+//     <li class="tbar__left">Content here</li>
+//     <li class="tbar__right">Content here</li>
+// </ul>
+//
+// Styleguide 2.1.4.
+// ----------------------------------------------
+
+.tbar {
+    margin: 0 0 1.4em 0;
+    padding: 0;
+    list-style: none;
+    .Clearfix();
+    .Border(2px);
+
+    > li {
+        margin-bottom: 0;
+        padding-top: 1.5em;
+    }
+    p {
+        margin-bottom: 0;
+    }
+}
+@media(min-width:@screen-sm-min) {
+    .tbar > li {
+        width: 50%;
+        float: left;
+        padding-bottom: 1.5em;
+    }
+    .tbar__left {
+        //.Border(2px,@blue-dark,right);
+        padding-right: 2em;
+        position: relative;
+        height: 100%;
+        &:after{
+          content: "";
+          width: 2px;
+          background: @blue-dark;
+          height: 100%;
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+    }
+    .tbar__right {
+        padding-left: 2em;
+        position: relative;
+        &:after{
+          content: "";
+          width: 2px;
+          background: @blue-dark;
+          height: 100%;
+          position: absolute;
+          left: -2px;
+          top: 0;
+        }
+    }
+}
+
+// T bar Alternative
+//
+// Markup:
+// <ul class="tbar--alternative">
+//     <li>
+//        <h3>Heading</h3>
+//        <div class="tbar__left">Content here</div>
+//     </li>
+//     <li>
+//        <h3>Heading</h3>
+//        <div class="tbar__right">Content here</div>
+//     </li>
+// </ul>
+//
+// Styleguide 2.1.5.
+// ----------------------------------------------
+
+.tbar--alternative {
+    border: none;
+    h3{
+      padding-bottom: 1em;
+      margin-bottom: 0;
+      .Border(2px, @blue-dark-light, bottom);
+    }
+    .tbar__left, .tbar__right{
+      padding-top: 1.5em;
+      padding-bottom: 1.5em;
+    }
+    .icon{
+      margin-right: .3em;
+      .Font-size(1.2);
+    }
+    p:last-child{
+      margin-bottom: 0;
+    }
+}
+
+
+
+// Loading animation
+//
+// Markup:
+// <div class="loader">
+//    <span></span>
+//    <span></span>
+//    <span></span>
+//    <span></span>
+//    <span></span>
+//    <span></span>
+//    <span></span>
+//    <span></span>
+//    <span></span>
+// </div>
+//
+// Styleguide 2.2
+// ----------------------------------------------
+
+
+//Loading
+.thumb__loading{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5);
+    color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    opacity: 0;
+    transition: .5s;
+}
+
+.loading .thumb__loading{
+    opacity: 1;
+}
+
+.loader{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  margin-left: -15px;
+  top: 50%;
+  left: 50%;
+  font-size: 0;
+}
+.loader span{
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 1px;
+  background-color: #CCCCCC;
+}
+.loader span:nth-child(5){
+  background-color: transparent;
+}
+
+/* ---------------------------------------- */
+
+.loader span:nth-child(1){
+  -webkit-animation: ani1 1000ms ease-out infinite;
+  animation: ani1 1000ms ease-out infinite;
+}
+@-webkit-keyframes ani1{
+  0%{background-color: #CCCCCC;}
+  12.5%{background-color: #1F63FF;}
+}
+@keyframes ani1{
+  0%{background-color: #CCCCCC;}
+  12.5%{background-color: #1F63FF;}
+}
+
+/* ---------------------------------------- */
+
+.loader span:nth-child(2){
+  -webkit-animation: ani2 1000ms ease-out infinite;
+  animation: ani2 1000ms ease-out infinite;
+}
+@-webkit-keyframes ani2{
+  12.5%{background-color: #CCCCCC;}
+  25%{background-color: #1F63FF;}
+}
+@keyframes ani2{
+  12.5%{background-color: #CCCCCC;}
+  25%{background-color: #1F63FF;}
+}
+
+/* ---------------------------------------- */
+
+.loader span:nth-child(3){
+  -webkit-animation: ani3 1000ms ease-out infinite;
+  animation: ani3 1000ms ease-out infinite;
+}
+@-webkit-keyframes ani3{
+  25%{background-color: #CCCCCC;}
+  37.5%{background-color: #1F63FF;}
+}
+@keyframes ani3{
+  25%{background-color: #CCCCCC;}
+  37.5%{background-color: #1F63FF;}
+}
+
+/* ---------------------------------------- */
+
+.loader span:nth-child(6){
+  -webkit-animation: ani6 1000ms ease-out infinite;
+  animation: ani6 1000ms ease-out infinite;
+}
+@-webkit-keyframes ani6{
+  37.5%{background-color: #CCCCCC;}
+  50%{background-color: #1F63FF;}
+}
+@keyframes ani6{
+  37.5%{background-color: #CCCCCC;}
+  50%{background-color: #1F63FF;}
+}
+
+/* ---------------------------------------- */
+
+.loader span:nth-child(9){
+  -webkit-animation: ani9 1000ms ease-out infinite;
+  animation: ani9 1000ms ease-out infinite;
+}
+@-webkit-keyframes ani9{
+  50%{background-color: #ECECEC;}
+  62.5%{background-color: #1F63FF;}
+}
+@keyframes ani9{
+  50%{background-color: #ECECEC;}
+  62.5%{background-color: #1F63FF;}
+}
+
+/* ---------------------------------------- */
+
+.loader span:nth-child(8){
+  -webkit-animation: ani8 1000ms ease-out infinite;
+  animation: ani8 1000ms ease-out infinite;
+}
+@-webkit-keyframes ani8{
+  62.5%{background-color: #CCCCCC;}
+  75%{background-color: #1F63FF;}
+}
+@keyframes ani8{
+  62.5%{background-color: #CCCCCC;}
+  75%{background-color: #1F63FF;}
+}
+/* ---------------------------------------- */
+.loader span:nth-child(7){
+  -webkit-animation: ani7 1000ms ease-out infinite;
+  animation: ani7 1000ms ease-out infinite;
+}
+@-webkit-keyframes ani7{
+  75%{background-color: #CCCCCC;}
+  82.5%{background-color: #1F63FF;}
+}
+@keyframes ani7{
+  75%{background-color: #CCCCCC;}
+  82.5%{background-color: #1F63FF;}
+}
+
+/* ---------------------------------------- */
+
+.loader span:nth-child(4){
+  -webkit-animation: ani4 1000ms ease-out infinite;
+  animation: ani4 1000ms ease-out infinite;
+}
+@-webkit-keyframes ani4{
+  82.5%{background-color: #CCCCCC;}
+  100%{background-color: #1F63FF;}
+}
+@keyframes ani4{
+  82.5%{background-color: #CCCCCC;}
+  100%{background-color: #1F63FF;}
+}
+
+
+// By Gale logo
+// ----------------------------------------------
+
+.bg-gale {
+    .Ir;
+    .sprite(@logo-footer);
+}
+
+
+.warranty__terms p {
+    margin-bottom: 1em;
+}
+
+
+// Help icon
+.help-popup {
+    position: relative;
+    display: inline-block;
+    float: right;
+    margin-right: 60px;
+}
+.help-popup:after {
+    content: 'i';
+    border: 1px solid #fff;
+    color: #fff;
+    width: 21px;
+    height: 21px;
+    text-align: center;
+    line-height: 24px;
+    font-weight: bold;
+    font-size: 14px;
+    font-style: normal;
+    margin-left: 15px;
+    font-family: CaeciliaCom-75Bold;
+    border-radius: 20px;
+    display: inline-block;
+}
+.help-popup .help-popup__content {
+    position: absolute;
+
+    top: -20px;
+    width: 250px;
+    right: 100%;
+    display: none;
+    background: #006db7;
+    border-radius: 2px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.5);
+}
+.help-popup .help-popup__content:after {
+    content: '';
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    margin-top: -10px;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    border: 10px solid transparent;
+    border-left: 10px solid #006db7;
+}
+.help-popup:hover .help-popup__content,
+.help-popup:focus .help-popup__content {
+    display: block;
+}

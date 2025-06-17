@@ -1,0 +1,66 @@
+.legend {
+    border: 1px solid @blue-dark;
+    margin-top: @base-margin / 2;
+    margin-bottom: @base-margin;
+
+    &__title {
+        border-bottom: 1px solid @blue-dark;
+        margin: 0;
+        text-align: center;
+        padding: 15px;
+        font-size: 14px;
+    }
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 0;
+        padding-left: 0;
+        list-style: none;
+
+        @media (min-width: @screen-sm-min) {
+            flex-wrap: nowrap;
+        }
+
+        li {
+            flex: 1 0 100%;
+            margin: 0;
+            border-bottom: 1px solid @blue-dark;
+
+            @media (min-width: @screen-sm-min) {
+                flex: 1 0 25%;
+                border-right: 1px solid @blue-dark;
+                border-bottom: 0;
+
+                &:last-child {
+                    border-right: 0;
+                }
+            }
+
+            &:last-child {
+                border-bottom: 0;
+            }
+        }
+    }
+    &__link {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        border: 0;
+        padding: @base-margin / 2;
+
+        @media (min-width: @screen-md-min) {
+            padding: @base-margin;
+        }
+
+        &:hover,
+        &.is-active {
+            background: @blue-light;
+        }
+    }
+    &__icon {
+        margin-right: @base-margin;
+    }
+    &__name {
+        .CaeciliaCom-75Bold;
+    }
+}

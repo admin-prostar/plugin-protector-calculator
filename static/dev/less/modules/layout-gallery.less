@@ -1,0 +1,50 @@
+// Gallery (category pages and gallery pages)
+// ----------------------------------------------
+
+.layout-gallery {
+    .row();
+
+    > ul {
+        padding: 0;
+    }
+}
+.layout-gallery__item {
+    .make-sm-column(6);
+    .make-md-column(4);
+    .Spacing-margin(false,true);
+    list-style: none;
+}
+.layout-gallery__title {
+    .Border(2px);
+}
+.layout-gallery--components img {
+    padding: 10%;
+    background: #fff;
+}
+.layout-gallery__summary__desktop {
+    display: none;
+    margin: 2em 3em;
+}
+.layout-gallery__summary__mobile {
+    margin: 0 3em;
+}
+
+@media(max-width:@screen-xs-max) {
+    .layout-gallery__item {
+        margin-left: -@mobile-padding-container;
+        margin-right: -@mobile-padding-container;
+
+        .thumb__title {
+            margin-top: 0;
+            border-top: 0;
+        }
+    }
+}
+@media(min-width: @screen-sm-min) {
+    .layout-gallery__summary__mobile {
+        display: none;
+    }
+    .layout-gallery__summary__desktop {
+        display: block;
+    }
+}

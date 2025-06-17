@@ -1,0 +1,19 @@
+// 2 column (standard page)
+// ----------------------------------------------
+
+.layout-2col {
+    .Spacing-padding(true, false);
+    .row();
+    border-top: 1px solid @border-color;
+}
+.layout-2col-article {
+    .make-xs-column(7);
+
+    @media(min-width: @screen-xs-min) {
+        padding-left: 0;
+    }
+}
+.layout-2col-complementary {
+    .make-xs-column(4);
+    .make-xs-column-offset(1);
+}

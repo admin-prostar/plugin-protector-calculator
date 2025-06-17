@@ -1,0 +1,37 @@
+.social_share {
+    .Clearfix;
+    margin-bottom: 20px;
+
+    h3 {
+        .Font-size(1);
+        border-bottom: 2px solid @blue-dark-light;
+        padding-bottom: 1em;
+        margin-bottom: 1.5em;
+    }
+    ul {
+        .list--unstyled;
+    }
+    li {
+        float: left;
+        margin-right: 15px;
+    }
+    a {
+        border: 0;
+    }
+    span {
+        border-bottom: 1px solid fadeout(@link-color, 75%);
+        transition: @transition-all;
+
+        &:hover,
+        &:focus {
+            outline: 0;
+            border-bottom-color: fadeout(@link-color, 0%);
+        }
+    }
+    .icon_facebook {
+        color: #00549E;
+    }
+    .icon_pinterest {
+        color: #CF0B0B;
+    }
+}
