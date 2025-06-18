@@ -1,0 +1,144 @@
+@media(min-width:@screen-md-min) {
+    .component-img {
+        width: 100px;
+        padding: 10px;
+        background: #fff;
+
+        img {
+            .Responsive;
+        }
+    }
+    .component-title {
+        width: 300px;
+    }
+}
+
+.components-list {
+    @media(max-width:@screen-sm-max) {
+        border-top: 5px solid #b0e2f9;
+    }
+
+    .js & {
+        display: none;
+    }
+
+    td {
+        border-bottom: 1px solid @cream;
+        border-right: 1px solid @cream;
+        background: #fff;
+    }
+    th.th--border {
+        border-left: none;
+    }
+    &.is-active {
+        display: table-row-group;
+    }
+    &__type {
+        @media(max-width:@screen-sm-max) {
+            padding: 20px;
+            background: #fff;
+        }
+
+        th {
+            background: #fff;
+        }
+    }
+    &__icons .system__icon {
+        margin-right: 5px;
+    }
+    &__compatible {
+        width: 20%;
+    }
+    &__heading td,
+    &__row td {
+        padding: 1.4em 2.1em;
+    }
+    &__spacer td {
+        height: 30px;
+        padding: 0;
+        background: transparent;
+
+        @media(min-width: @screen-md-min) {
+            border-bottom-color: @blue-dark;
+            background: transparent;
+        }
+    }
+    &__spacer--last td {
+        border: 0;
+    }
+}
+.table--responsive-category .components-list tr {
+    @media(max-width:@screen-sm-max) {
+        margin-bottom: 0;
+    }
+}
+
+
+// Not sure if there's a better way to do this because EE & the data scructure is all over the place
+// Hide/show rows of components if they actually belong to the selected category
+#FF-M.is-active .components-list__row {
+    display: none;
+
+    &.FF-M {
+        display: table-row;
+    }
+}
+#SF-6.is-active .components-list__row {
+    display: none;
+
+    &.SF-6 {
+        display: table-row;
+    }
+}
+#SF-A.is-active .components-list__row {
+    display: none;
+
+    &.SF-A {
+        display: table-row;
+    }
+}
+#SF-9.is-active .components-list__row {
+    display: none;
+
+    &.SF-9 {
+        display: table-row;
+    }
+}
+#FF-C.is-active .components-list__row {
+    display: none;
+
+    &.FF-C {
+        display: table-row;
+    }
+}
+#FF-CB.is-active .components-list__row {
+    display: none;
+
+    &.FF-CB {
+        display: table-row;
+    }
+}
+
+
+.hidden--answer .faq--answer {
+    display:none;
+}
+
+h3.faq--question{
+    font-weight:500;
+    cursor:pointer;
+    padding-left:20px;
+    &:before {
+        display: block;
+        content: "[-]";
+        float: left;
+        margin-left: -30px;
+        font-family: monospace;
+        font-size: 13px;
+        letter-spacing: -3px;
+        margin-top: 4px;
+    }
+}
+.hidden--answer h3.faq--question:before{
+    content: "[+]";
+}

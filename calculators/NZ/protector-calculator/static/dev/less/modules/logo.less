@@ -1,0 +1,38 @@
+.logo {
+    display: inline-block;
+    border: 0;
+
+    span {
+        .Ir;
+    }
+    img {
+        display: none;
+    }
+}
+.logo--header {
+    float: left;
+
+    span {
+        .sprite(@logo);
+    }
+}
+.logo--footer span {
+    .sprite(@logo-footer);
+    .Sprite-retina;
+}
+.logo--small span {
+    .sprite(@logo-small);
+    .Sprite-retina;
+}
+
+@media(max-width:@screen-sm-max) {
+    .logo--header {
+        display: none;
+    }
+}
+@media(min-width:@screen-md-min) {
+    .logo--header {
+        margin-top: @base-margin;
+        margin-bottom: .75em;
+    }
+}

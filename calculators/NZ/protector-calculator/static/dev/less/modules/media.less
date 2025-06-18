@@ -1,0 +1,42 @@
+// Media Element
+//
+// Styleguide 6.
+
+
+// Default media element
+//
+// Modifiers:
+//
+// .media--right - Right aligned media element
+// .media--vertical - Vertical media element
+//
+// Markup:
+// <div class="media {$modifiers}">
+//     <div class="media__img"><img src="http://placekitten.com/50/50" alt=""></div>
+//     <div class="media__bd">Body content</div>
+// </div>
+//
+// Styleguide 6.1.1.
+
+.media, .media__bd {
+    overflow:hidden;
+    _overflow:visible;
+    zoom:1;
+}
+.media__bd {
+    display: block;
+}
+.media .media__img {
+    float:left;
+    margin-right: 15px;
+}
+.media--right .media__img {
+    float: right;
+    margin-right: 0;
+    margin-left: 15px;
+}
+.media--vertical .media__img {
+    float: none;
+    margin-right: 0;
+    margin-bottom: 15px;
+}

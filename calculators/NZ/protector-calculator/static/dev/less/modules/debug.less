@@ -1,0 +1,34 @@
+body:after {
+    content: 'Smaller than xs';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    padding: 10px 15px;
+    background: red;
+    color: #fff;
+}
+@media(min-width:@screen-xs-min) {
+    body:after {
+        content: 'Larger than xs';
+        background: green;
+    }
+}
+@media(min-width:@screen-sm-min) {
+    body:after {
+        content: 'Larger than sm';
+        background: blue;
+    }
+}
+@media(min-width:@screen-md-min) {
+    body:after {
+        content: 'Larger than md';
+        background: orange;
+    }
+}
+@media(min-width:@screen-lg-min) {
+    body:after {
+        content: 'Larger than lg';
+        background: black;
+    }
+}

@@ -1,0 +1,116 @@
+.footer {
+    .Clearfix();
+    .Border(2px, @blue-dark, top);
+    .Spacing-padding(true,true);
+    .Spacing-margin(true,false);
+    .make-row;
+}
+.footer__logo {
+    .make-sm-column(6);
+    //.make-sm-column-pull(9);
+    .make-md-column(2.5);
+    //.make-md-column-pull(7);
+    .Spacing-margin(false,true);
+}
+.footer__warranty {
+    .make-sm-column(6);
+    //.make-sm-column-pull(9);
+    .make-md-column(2.5);
+    //.make-md-column-pull(6.5);
+    .Spacing-margin(false,true);
+    .btn { width: 170px; text-align: center; margin-bottom: 15px; }
+}
+.footer__nav {
+    .make-sm-column(12);
+    //.make-sm-column-push(3);
+    .make-md-column(7);
+    //.make-md-column-push(5);
+
+    ul {
+        .make-sm-column(4);
+        .list--unstyled;
+    }
+}
+.footer__social {
+    width: 120px;
+    float: right;
+    margin-top: 1em;
+    ul {
+        .Clearfix();
+        .list--unstyled;
+        padding-right: 0px;
+        li {
+            float: left;
+            width: 40px;
+            text-align: right;
+            a {
+                .Font-size(1.8);
+                &:hover {
+                    color: @blue;
+                }
+                &:hover,
+                &:focus,
+                &:link {
+                    border-bottom: none !important;
+                    text-decoration: none !important;
+                }
+            }
+        }
+    }
+}
+.byaugust {
+    clear: both;
+    margin-top: 2em;
+
+    i {
+        .Size(17px, 16px);
+        .sprite(@august);
+        display: inline-block;
+        margin-right: 6px;
+        vertical-align: middle;
+        margin-bottom: 3px;
+    }
+}
+@media(min-width:@screen-sm-min){
+    .byaugust {
+        position: relative;
+        top: -53px;
+        float: left;
+    }
+}
+
+
+// Footer - media queries -----------------------
+
+@media(max-width:@screen-xs-max) {
+    .footer__social {
+        float: none;
+        margin-top: 30px;
+        ul {
+            li {
+                text-align: left;
+            }
+        }
+    }
+    .footer .container {
+        padding: 0;
+    }
+}
+@media(min-width: @screen-xs-min) {
+    .footer__warranty {
+        .btn { margin-bottom: 0; }
+    }
+}
+@media(min-width:@screen-sm-min) {
+    .footer__logo {
+        margin-top: 0;
+    }
+}
+@media(min-width:@screen-md-min){
+    .footer__warranty {
+        margin-top: 0;
+        .btn { margin-bottom: 15px; }
+    }
+}
+
+

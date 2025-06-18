@@ -1,0 +1,147 @@
+
+@base-font-size:            14px;
+@base-line-height:          1.3;
+@base-margin:               2em;
+@base-font-color:           @blue-dark;
+@base-font-family:          "proxima-nova",sans-serif;
+@base-select-bg-color:      fade(@blue-mid, 50%);
+@base-select-color:         @blue-dark;
+
+@border-color:              @cream-dark;
+
+
+// LINKS
+// --------------------------------------------------
+
+@link-color:                @blue-dark;
+@link-visited-color:        @blue-mid;
+@link-hover-color:          @blue-mid;
+
+@nav-hover-color:           @teal;
+
+
+// ACCORDION
+// --------------------------------------------------
+
+@accordion-padding:         1.4em;
+
+
+// COLOURS
+// --------------------------------------------------
+
+@placeholder-text:          #ccc;
+
+@cream:                     #f6f3e8;
+@cream2:                    #dbd8cd;
+@cream-dark:                #dcd9cc;
+@cream-darker:              #b4b1a4;
+@blue:                      #006db7;
+@blue-dark:                 #1f2b51;
+@blue-dark-light:           #364163;
+@blue-mid:                  #2ab0e4;
+@blue-light:                #d2eefe;
+@blue-light-dark:           #c1e8fb;
+@blue-border:               #a3ddf6;
+@blue2:                     #e3f5ff;
+@blue3:                     #47b3e8;
+@blue4:                     #bee7fa;
+@blue5:                     #a9c6d7;
+@green:                     #a4c867;
+@green-bunnings:            #016c64;
+@green-bunnings-dark:       #004741;
+@teal:                      #87cdcf;
+@yellow:                    #ffdf00;
+@forest:                    #009442;
+@red:                       #e4283c;
+@pink:                      #e20083;
+@orange:                    #f8b23c;
+
+@facebook:                  #4c71a8;
+@twitter:                   #00bbf2;
+@pinterest:                 #cb3737;
+@linkedin:                  #1586b0;
+@email:                     #87cdcf;
+
+@error-color:               @red;
+
+
+// TRANSITIONS
+// --------------------------------------------------
+
+@transition-all:            all .25s;
+@transition-color:          color .25s;
+@transition-background:     background .25s;
+
+
+// FORMS
+// --------------------------------------------------
+
+@field-border-color:        #ccedf4;
+@field-background-color:    #f9fdff;
+@field-padding:             11px;
+@field-border-radius:       2px;
+
+
+// MEDIA QUERIES
+// --------------------------------------------------
+
+// Extra small screen / phone
+@screen-xs:                480px;
+@screen-xs-min:            @screen-xs;
+@screen-phone:             @screen-xs-min;
+
+// Small screen / tablet
+@screen-sm:                768px;
+@screen-sm-min:            @screen-sm;
+@screen-tablet:            @screen-sm-min;
+
+// Medium screen / desktop
+@screen-md:                992px;
+@screen-md-min:            @screen-md;
+@screen-desktop:           @screen-md-min;
+
+// Large screen / wide desktop
+@screen-lg:                1200px;
+@screen-lg-min:            @screen-lg;
+@screen-lg-desktop:        @screen-lg-min;
+
+// So media queries don't overlap when required, provide a maximum
+@screen-xxs-max:           (@screen-xs-min - 1);
+@screen-xs-max:            (@screen-sm-min - 1);
+@screen-sm-max:            (@screen-md-min - 1);
+@screen-md-max:            (@screen-lg-min - 1);
+
+
+@mobile-padding-container:  1.5em;
+
+@header-mobile-breakpoint-min: @screen-sm-min;
+@header-mobile-breakpoint-max: (@header-mobile-breakpoint-min - 1);
+@header-mobile-padding: 1.5em;
+
+
+// GRID
+// --------------------------------------------------
+
+//** Number of columns in the grid.
+@grid-columns:            12;
+
+//** Padding between columns. Gets divided in half for the left and right.
+@grid-gutter-width:       10px;
+
+
+//== Container sizes
+
+// Small screen / tablet
+@container-tablet:        ((720px + @grid-gutter-width));
+//** For `@screen-sm-min` and up.
+@container-sm:            @container-tablet;
+
+// Medium screen / desktop
+@container-desktop:       ((950px + @grid-gutter-width));
+//** For `@screen-md-min` and up.
+@container-md:            @container-desktop;
+
+// Large screen / wide desktop
+@container-large-desktop: ((1180px + @grid-gutter-width));
+//** For `@screen-lg-min` and up.
+@container-lg:            @container-large-desktop;

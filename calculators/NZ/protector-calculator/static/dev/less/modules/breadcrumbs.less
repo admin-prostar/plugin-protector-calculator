@@ -1,0 +1,57 @@
+// Breadcrumbs
+//
+// Styleguide 10.
+
+
+// Standard breadcrumbs
+//
+// Markup:
+// <div class="breadcrumbs">
+//     <ol>
+//         <li><a href="">Home</a></li>
+//         <li><a href="">Previous Page</a></li>
+//         <li><span>Current Page</span></li>
+//     </ol>
+// </div>
+//
+// Styleguide 10.1.1.
+// ----------------------------------------------
+
+.breadcrumbs {
+    padding-bottom: 1em;
+
+    ol {
+        .list--inline;
+    }
+    li:after {
+        content: "/";
+        margin-left: 5px;
+    }
+    li:last-child:after {
+        display: none;
+    }
+}
+.layout__detail__header .breadcrumbs {
+    margin-bottom: 2em;
+    margin-right: 75px;
+    padding-bottom: 0;
+
+    a {
+        color: #fff;
+        border-bottom-color: rgba(255, 255, 255, 0.3);
+
+        &:hover,
+        &:focus {
+            border-bottom-color: #fff;
+        }
+    }
+}
+
+@media(min-width: @screen-md-min) {
+    .breadcrumbs {
+        padding-bottom: 1em;
+    }
+    .layout__detail__header .breadcrumbs {
+        margin-bottom: 3em;
+    }
+}

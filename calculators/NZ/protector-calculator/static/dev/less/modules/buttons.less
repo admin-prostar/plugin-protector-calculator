@@ -1,0 +1,176 @@
+// Buttons
+//
+// Styleguide 4.
+
+
+// Standard buttons
+//
+// .btn--blue-dark  - Dark blue button
+// .btn--blue-light - Light blue button
+// .btn--cream      - Cream button
+// .btn--icon       - Absolutely position icons left in buttons so we can adjust the size of icons
+//
+// Markup:
+// <a href="#" class="btn {$modifiers}">Standard button</a>
+//
+// Styleguide 4.1.1.
+
+.btn,
+.btn:visited {
+    padding: @field-padding + 1;
+    border-radius: @field-border-radius;
+    background: @blue-mid;
+    color: #fff;
+    border: 0;
+    text-decoration: none;
+    display: inline-block;
+    transition: @transition-all;
+
+    &:hover,
+    &:focus {
+        background: @blue-dark;
+    }
+}
+
+.btn--blue,
+.btn--blue:visited {
+    background: @blue;
+    color: #fff;
+
+    &.btn--bordered {
+        border-color: @blue;
+    }
+}
+.btn--blue-light,
+.btn--blue-light:visited {
+    background: @blue-mid;
+    color: #fff;
+
+    &.btn--bordered {
+        border-color: @blue-mid;
+    }
+}
+.btn--cream,
+.btn--cream:visited {
+    background: @cream;
+    color: @blue-dark;
+
+    &:hover,
+    &:focus {
+        color: #fff;
+    }
+    &.btn--bordered {
+        border-color: @cream;
+    }
+}
+.btn--white,
+.btn--white:visited {
+    background: #fff;
+    color: @blue-dark;
+
+    &:hover,
+    &:focus {
+        color: #fff;
+        background: @blue-mid;
+    }
+    &.btn--bordered {
+        border-color: #fff;
+    }
+}
+.btn--block {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 1em;
+}
+.btn--bordered {
+    border: 1px solid;
+}
+.btn--icon {
+    position: relative;
+    padding-left: 3em;
+
+    .icon {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        margin: -10px 0 0 0;
+    }
+}
+.btn--cart-catch {
+    box-shadow: inset 0 0 0 1px fade(@blue-dark, 20%);
+    padding-left: 42px;
+    position: relative;
+    .icon_cart-catch {
+        font-size: 20px;
+        width: 25px;
+        height: 17px;
+        position: absolute;
+        margin-left: -40px;
+    }
+}
+
+
+// Standard buttons
+//
+// Markup:
+// <a href="#" class="btn-pill {$modifiers}">Pill button</a>
+//
+// Styleguide 4.1.2.
+
+.btn-pill {
+    color: @blue-mid;
+    background: @blue4;
+    padding: .2em 1.2em;
+    border-radius: 1em;
+    text-decoration: none;
+    transition: @transition-all;
+
+    &:hover,
+    &:focus {
+        background: @blue-mid;
+        color: #fff;
+    }
+}
+
+
+// Learn more button
+//
+// Markup:
+// <a href="#" class="btn-more"><span>More button</span><i class="icon icon_right_arrow"></i></a>
+//
+// Styleguide 4.1.3.
+
+.btn-more {
+    padding: 0;
+    border: 0;
+
+    span {
+        border-bottom: 1px solid fadeout(@link-color, 75%);
+        transition: @transition-all;
+
+        &:hover,
+        &:focus {
+            border-bottom-color: fadeout(@link-color, 0%);
+        }
+    }
+    .icon {
+        margin-left: 15px;
+        margin-top: -2px;
+        font-size: 31px;
+        height: 10px;
+        line-height: 6px;
+    }
+}
+
+
+// Right aligned button (used in the calculator)
+//
+// Markup:
+// <a href="#" class="btn--right">Continue</a>
+//
+// Styleguide 4.1.4.
+.btn--right {
+    float: right;
+    margin-bottom: 1em;
+}

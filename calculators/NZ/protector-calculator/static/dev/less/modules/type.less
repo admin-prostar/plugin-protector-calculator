@@ -1,0 +1,548 @@
+// Type
+//
+// Styleguide 8.
+// ----------------------------------------------
+
+
+// Standardise margins
+// ----------------------------------------------
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+    .CaeciliaCom-75Bold;
+}
+h1,
+.h1 {
+    margin-top:0;
+    margin-bottom: 0.8em;
+}
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+    margin-top:0;
+    margin-bottom: 0.9em;
+    line-height: 1.5;
+}
+p,
+ul,
+ol,
+dl,
+hr {
+    margin-top:0;
+    margin-bottom: @base-margin;
+}
+
+.half-margin{
+    p, ul, ol, dl, hr {
+        margin-bottom: @base-margin/2;
+    }
+}
+
+// Text styles
+//
+// Markup:
+// <span class="{$modifiers}">This is a line of text</span>
+//
+// .underline   -   underline.
+//
+// Styleguide 8.1.0.
+// ----------------------------------------------
+
+.underline{
+    display: block;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid @base-font-color;
+}
+
+
+// Headings
+//
+// Markup:
+// <h1>Heading 1</h1>
+// <h2>Heading 2</h2>
+// <h3>Heading 3</h3>
+// <h4>Heading 4</h4>
+// <h5>Heading 5</h5>
+// <h6>Heading 6</h6>
+//
+// Styleguide 8.1.1.
+// ----------------------------------------------
+
+h1, .h1 { .Font-size(1.5); line-height: 1.1; }
+h2 { .Font-size(1.98); color: @blue; }
+h3 { .Font-size(1.47); }
+h4 { .Font-size(1.25); font-family: proxima-nova,sans-serif; font-weight: bold; }
+h5 { .Font-size(1.1); font-family: proxima-nova,sans-serif; font-weight: bold; }
+h6 { .Font-size(1); }
+
+@media(min-width:@screen-md-min) {
+    h1, .h1 { .Font-size(2.2); }
+}
+
+
+// Links
+//
+// Markup:
+// <a href="">Link text</a>
+//
+// Styleguide 8.1.2.
+// ----------------------------------------------
+
+a {
+    color: @link-color;
+    text-decoration: none;
+    border-bottom: 1px solid fadeout(@link-color, 75%);
+    transition: @transition-all;
+
+    &:hover,
+    &:focus {
+        outline: 0;
+        border-bottom-color: fadeout(@link-color, 0%);
+    }
+}
+@media(min-width:@screen-xs-min) {
+    a[href^="tel:"] {
+        text-decoration: none;
+        border: none;
+    }
+}
+
+
+// Unordered Lists
+//
+// Markup:
+// <ul class="{$modifiers}">
+//     <li>List content</li>
+//     <li>List content</li>
+//     <li>List content</li>
+// </ul>
+//
+// Styleguide 8.1.3.
+// ----------------------------------------------
+
+ul,
+ol {
+    li {
+        margin-bottom: 8px;
+    }
+}
+
+
+// Ordered Lists
+//
+// Markup:
+// <ol>
+//     <li>List content</li>
+//     <li>List content</li>
+//     <li>List content</li>
+// </ol>
+//
+// Styleguide 8.1.4.
+// ----------------------------------------------
+
+
+// Blockquote
+//
+// Markup:
+// <blockquote>
+//     <p>Quote</p>
+//     <cite>Name</cite>
+// </blockquote>
+//
+// Styleguide 8.1.5.
+// ----------------------------------------------
+
+blockquote {
+    .Font-size(1.62);
+    line-height: 1.5;
+    margin: 0;
+    color: @blue;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    padding-left: 1.22em;
+
+    &:before {
+        .Size(15px, 3px);
+        content: '';
+        position: absolute;
+        top: .55em;
+        left: 0;
+        background: @blue;
+    }
+    a,
+    a:visited {
+        color: @blue;
+    }
+}
+
+
+// Abbreviations
+//
+// Used for any abbreviated text, whether it be acronym, initialism, or otherwise. Generally, it’s less work and useful (enough) to mark up only the first occurence of any particular abbreviation on a page, and ignore the rest. Any text in the title attribute will appear when the user’s mouse hovers the abbreviation (although notably, this does not work in Internet Explorer for Windows).
+//
+// Markup:
+// <abbr title="Abbreviation">Abbr</abbr>
+//
+// Styleguide 8.1.6.
+// ----------------------------------------------
+
+
+// Code
+//
+// Used for computer code samples. Useful for technology-oriented sites, not so useful otherwise.
+//
+// Markup:
+// <code>Code</code>
+//
+// Styleguide 8.1.7.
+// ----------------------------------------------
+
+
+// Cite
+//
+// Used for defining a citation or reference to other information sources. Example cited text and usage: More information can be found in [ISO-0000]
+//
+// Markup:
+// More information can be found in <cite>[ISO-0000]</cite>
+//
+// Styleguide 8.1.8.
+// ----------------------------------------------
+
+
+// Del
+//
+// Used for deleted or retracted text which still must remain on the page for some reason. Since the default style includes a strikethrough line, it’s preferable to the s element. The del element also has a datetime attribute which allows you to include a timestamp directly in the element. Example deleted text and usage: She bought two five pairs of shoes.
+//
+// Markup:
+// She bought <del>two</del> five pairs of shoes.
+//
+// Styleguide 8.1.9.
+// ----------------------------------------------
+
+
+// Em
+//
+// Used for denoting emphasized text. In most instances where you'd want to italicize text (using the HTML element i or otherwise) you should use the em element instead. Notable exceptions are stylistic italicizing of proper titles, foreign languages, etc. where italicizing is used for differentiation instead of emphasis. In those cases, no proper HTML elements exist, so an i element or a span element with a custom class may be preferable. Example emphasized text and usage: You simply must try the negitoro maki!
+//
+// Markup:
+// You simply <em>must</em> try the negitoro maki!
+//
+// Styleguide 8.1.10.
+// ----------------------------------------------
+
+
+// Ins
+//
+// Used for inserted text and counterpart to the del element. Like del, ins has a datetime attribute which allows you to include a timestamp directly in the element. Example inserted text and usage: She bought two five pairs of shoes.
+//
+// Markup:
+// <ins>ins</ins>
+//
+// Styleguide 8.1.11.
+// ----------------------------------------------
+
+
+// Q
+//
+// Used for quoting inline.
+//
+// Markup:
+// <q>John said, I saw Lucy at lunch, she told me Mary wants you to get some ice cream on your way home. I think I will get some at Ben and Jerry’s, on Gloucester Road.</q>
+//
+// Styleguide 8.1.12.
+// ----------------------------------------------
+
+
+// Strong
+//
+// Used for denoting stronger emphasis than the em element. In most instances where you'd want to bold text (using the HTML element b or otherwise) you should use the strong element instead. Notable exceptions are stylistic bolding of examples, first occurences of names in an article, etc. where bolding is used for differentiation instead of emphasis. In those cases, no proper HTML elements exist, so b element or a span element with a custom class may be preferable.
+//
+// Markup:
+// <strong>Don't</strong> stick nails in the electrical outlet.
+//
+// Styleguide 8.1.13.
+// ----------------------------------------------
+
+
+// Tables
+//
+// .table--zebra     - Makes even rows darker shade of blue
+// .table--small-pad - Small padding on table cells
+// .td--unstyled     - No background, no borders
+// .table--fixed     - Equally distribute table cells
+//
+// Markup:
+// <table @{modifiers}>
+//     <thead>
+//         <tr>
+//             <th>Heading</th>
+//             <th>Heading</th>
+//             <th>Heading</th>
+//         </tr>
+//     </thead>
+//     <tbody>
+//         <tr>
+//             <td>Content</td>
+//             <td>Content</td>
+//             <td>Content</td>
+//         </tr>
+//     </tbody>
+// </table>
+//
+// Styleguide 8.1.14.
+// ----------------------------------------------
+
+table {
+    width: 100%;
+    margin-bottom: 3em;
+}
+th, td {
+    padding: 2.1em;
+}
+th {
+    border-top: 1px solid @blue-dark;
+    border-bottom: 1px solid @blue-dark;
+    text-align: left;
+    .CaeciliaCom-75Bold;
+
+    &.th--border {
+        border-left: 1px solid @blue-dark;
+    }
+    &.th--blue {
+        background: @blue-light;
+        border-bottom: 1px solid #b0e2f9;
+        border-right: 1px solid #b0e2f9;
+
+        &:last-child {
+            border-right: 0;
+        }
+    }
+    &.th--sansserif {
+        font-family: @base-font-family;
+    }
+    &.th--nopad {
+        padding: 1em 2.1em;
+        & p:last-child{
+            margin-bottom: 0;
+        }
+    }
+    &.th--nopad-left {
+        padding-left: 0;
+    }
+}
+td {
+    background: @blue-light;
+    border-bottom: none;
+    border-bottom: 1px solid #b0e2f9;
+    border-right: 1px solid #b0e2f9;
+
+    &.empty {
+        background: @blue-light-dark;
+    }
+    p {
+        margin-bottom: 5px;
+    }
+}
+td:last-child {
+    border-right: 0;
+}
+.table--zebra tr:nth-child(even) td {
+    background: @blue-light-dark;
+}
+.table--hover tbody .is-hovered {
+    td {
+        background: @blue-light-dark;
+    }
+}
+.table--small-pad {
+    th, td {
+        padding: 0.9em 2.1em;
+    }
+}
+.td--unstyled {
+    background: transparent;
+    border: 0;
+}
+.table--fixed {
+    table-layout : fixed;
+}
+.table-responsive-name a {
+    .CaeciliaCom-75Bold;
+    text-decoration: none;
+    border: 0;
+}
+
+
+// Responsive tables
+// ----------------------------------------------
+
+@media(max-width:@screen-sm-max) {
+    .table--responsive {
+        tr {
+            display: block;
+            border-bottom: 5px solid #b0e2f9;
+
+            &:last-child {
+                border: 0;
+            }
+        }
+        th {
+            width: 100%;
+            display: block;
+            border: 0;
+            margin: 0 0 1em;
+            padding: 0;
+        }
+        td {
+            width: 100%!important;
+            min-height: 46px!important;
+            display: block;
+            border-right: 0;
+            position: relative;
+            padding-left: 40%!important;
+            padding-top: 1em;
+            padding-bottom: 1em;
+
+            &:before {
+                .CaeciliaCom-75Bold;
+                width: 35%!important;
+                display: block;
+                position: absolute;
+                left: 1em;
+            }
+            img {
+                .Responsive;
+            }
+        }
+        thead,
+        th.th--blue,
+        th.shrink,
+        .table-responsive-hide {
+            display: none;
+        }
+        .table-responsive-image {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        .table-responsive-image:before {
+            content: 'Image';
+            top: 1em;
+        }
+        .table-responsive-name:before {
+            content: 'Name';
+        }
+        .table-responsive-product:before {
+            content: 'Product';
+        }
+        .table-responsive-product-codes:before {
+            content: 'Product codes';
+        }
+        .table-responsive-downloads:before {
+            content: 'Downloads';
+        }
+        .table-responsive-learn-more:before {
+            content: 'Learn More';
+        }
+        .table-responsive-step:before {
+            content: 'Step';
+        }
+        .table-responsive-instructions:before {
+            content: 'Instruction';
+        }
+        .table-responsive-part-number:before {
+            content: 'Everton Part Number';
+        }
+        .table-responsive-description:before {
+            content: 'Description';
+        }
+        .table-responsive-also-compatible:before {
+            content: 'Also compatible with';
+        }
+        .table-responsive-sf-9:before {
+            content: 'SF-9';
+        }
+        .table-responsive-ff-m:before {
+            content: 'FF-M';
+        }
+        .table-responsive-ff-c:before {
+            content: 'FF-C';
+        }
+        .table-responsive-sf-6:before {
+            content: 'SF-6';
+        }
+        .table-responsive-sf-a:before {
+            content: 'SF-A';
+        }
+        .table-responsive-price:before {
+            content: 'Price';
+        }
+        .table-responsive-qty:before {
+            content: 'Quantity';
+        }
+        .table-responsive-subtotal:before {
+            content: 'Subtotal';
+        }
+        .table-responsive-estimate:before {
+            content: 'Total';
+            left: .5em;
+        }
+        .table-responsive-price,
+        .table-responsive-qty,
+        .table-responsive-estimate,
+        .table-responsive-subtotal {
+            text-align: left!important;
+        }
+        td img {
+            min-width: 0;
+        }
+    }
+    .table--responsive-category {
+        tr {
+            border-bottom: 1px solid #bfc0c2;
+            margin-bottom: 15px;
+        }
+    }
+}
+@media(min-width:@screen-md-min) {
+    .th--part-number {
+        width: 200px;
+    }
+    td.large {
+        .Font-size(2.14);
+        .CaeciliaCom-75Bold;
+        min-width: 180px;
+        padding: 1.07em;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    .td--center {
+        text-align: center;
+    }
+    .td-link {
+        width: 25%;
+    }
+    .table--responsive-desktop-hide {
+        display: none;
+    }
+    .table--responsive-desktop-center {
+        text-align: center;
+    }
+}

@@ -1,0 +1,588 @@
+// Mixins
+//
+// Mixins should begin with uppercase letter to so next developer knows they can find it in the mixin file.
+//
+// Styleguide 1.
+
+
+// REM font sizing
+//
+// Markup:
+// .Font-size(pixel-value);
+//
+// Styleguide 1.1.1.
+// ----------------------------------------------
+
+.Font-size(@sizeValue) {
+    @remValue: @sizeValue;
+    @pxValue: (@sizeValue * 14);
+    font-size: ~"@{pxValue}px";
+    font-size: ~"@{remValue}rem";
+}
+
+
+// Clearfix
+//
+// Markup:
+// .Clearfix();
+//
+// Styleguide 1.1.2.
+// ----------------------------------------------
+
+.Clearfix() {
+    *zoom: 1;
+
+    &:before,
+    &:after {
+        display: table;
+        content: "";
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+.clearfix{
+    .Clearfix();
+}
+
+
+// Center-align a block level element
+//
+// Markup:
+// .Center-block();
+//
+// Styleguide 1.1.3.
+// ----------------------------------------------
+
+.Center-block() {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+// Sizing shortcut
+//
+// Markup:
+// .Size(width,height);
+//
+// Styleguide 1.1.4.
+// ----------------------------------------------
+.Size(@width: 5px, @height: 5px) {
+    width: @width;
+    height: @height;
+}
+
+
+// Placeholder text
+//
+// Markup:
+// .Placeholder(color);
+//
+// Styleguide 1.1.5.
+// ----------------------------------------------
+
+.Placeholder(@color: @placeholder-text) {
+    &:-moz-placeholder {
+        color: @color;
+    }
+    &:-ms-input-placeholder {
+        color: @color;
+    }
+    &::-webkit-input-placeholder {
+        color: @color;
+    }
+}
+
+
+// Image replacement
+//
+// Markup:
+// .Ir;
+//
+// Styleguide 1.1.6.
+// ----------------------------------------------
+
+.Ir {
+    text-indent: -9999px;
+    display: inline-block;
+}
+
+
+// Border
+//
+// Markup:
+// .Border(@weight, @color, @position);
+//
+// Styleguide 1.1.7.
+// ----------------------------------------------
+
+.Border(@weight:1px, @color:@blue-dark, @position:top) {
+    border-@{position}: @weight solid @color;
+}
+
+
+// Margin & padding elements
+// ----------------------------------------------
+
+// Padding
+//
+// Markup:
+// .Spacing-padding;
+//
+// Styleguide 1.1.8.
+// ----------------------------------------------
+
+.Spacing-padding(@top, @bottom) when (@top = true) {
+    padding-top: @base-margin;
+}
+.Spacing-padding(@top, @bottom) when (@bottom = true) {
+    padding-bottom: @base-margin;
+}
+
+// Margin
+//
+// Markup:
+// .Spacing-margin;
+//
+// Styleguide 1.1.9.
+// ----------------------------------------------
+
+.Spacing-margin(@top, @bottom) when (@top = true) {
+    margin-top: @base-margin;
+}
+.Spacing-margin(@top, @bottom) when (@bottom = true) {
+    margin-bottom: @base-margin;
+}
+
+
+// Mobile padding
+//
+// Markup:
+// .Spacing-padding-mobile;
+//
+// Styleguide 1.1.10.
+// ----------------------------------------------
+
+.Spacing-padding-mobile {
+    @media(max-width:@screen-xs-max) {
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+    }
+}
+
+
+// Pixel to em converter
+//
+// Markup:
+// .Pxtoem(@property, @basepx, @convert);
+//
+// - @property - the property you want to use the unit for e.g. padding-left
+// - @basepx   - the pixel value you want to use as a base for the calculation
+// - @convert  - the pixel value you want converted into ems
+//
+// Styleguide 1.1.11.
+// ----------------------------------------------
+
+.Pxtoem(@property, @basepx, @convert) {
+    @unit: em;
+    @em: @convert/@basepx;
+    @{property}: ~"@{em}@{unit}";
+}
+
+
+// Arrow generator
+//
+// Markup:
+// .Arrow(@arrow-direction, @arrow-size, @arrow-colour);
+//
+// - @arrow-direction - the direction for the arrow to point e.g. left
+// - @arrow-size      - the size of the arrow in px
+// - @arrow-colour    - the colour of the arrow
+//
+// Styleguide 1.1.12.
+// ----------------------------------------------
+
+.Arrow(@arrow-direction, @arrow-size, @arrow-colour) {
+    border: @arrow-size solid transparent;
+    border-@{arrow-direction}: @arrow-size solid @arrow-colour;
+}
+
+
+// Invisible transition
+//
+// Markup:
+// .Invisible;
+//
+// Styleguide 1.1.13.
+
+.Invisible {
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s;
+}
+
+
+// Visible transition
+//
+// Markup:
+// .Visible;
+//
+// Styleguide 1.1.14.
+
+.Visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+// Max height transition
+//
+// Markup:
+// .Maxheight;
+//
+// Styleguide 1.1.15.
+
+.Maxheight(@speed: 1.5s) {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height @speed;
+}
+
+
+// Responsive images
+//
+// Markup:
+// .Responsive;
+//
+// Styleguide 1.1.16.
+
+.Responsive {
+    max-width: 100%;
+    min-width: 100%;
+    height: auto;
+}
+
+
+// Unordered Lists
+//
+// .list-flat       - Flat list - floated list items
+// .list-inline     - Flat list - Inline list items
+// .list-unstyled   - Unstyled list
+// .list--ticked    - Ticked list
+// .list--lined     - Border bottom on li items
+// .list--spaced    - Spacing below li items
+//
+// Markup:
+// <ul class="{$modifiers}">
+//     <li>List content</li>
+//     <li>List content</li>
+//     <li>List content</li>
+// </ul>
+//
+// Styleguide 1.1.17.
+// ----------------------------------------------
+
+.list--unstyled {
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+}
+.list--flat {
+    .list--unstyled;
+
+    li {
+        float: left;
+    }
+}
+.list--inline {
+    .list--unstyled;
+
+    li {
+        display: inline-block;
+    }
+}
+
+.list--lined {
+    .list--unstyled;
+    li{
+        border-bottom: 1px solid @blue-border;
+        margin: 0;
+    }
+}
+
+.list--spaced{
+    .list--unstyled;
+    li{
+        margin-bottom: 1.5em;
+    }
+}
+
+
+// Outdent text off screen
+//
+// Markup:
+// .Outdent;
+//
+// Styleguide 1.1.18.
+// ----------------------------------------------
+
+.Outdent {
+    position: absolute;
+    left: -9999px;
+}
+
+
+
+// Retina sprite
+//
+// Markup:
+// .Sprite-retina;
+//
+// Styleguide 1.1.19.
+// ----------------------------------------------
+
+.Sprite-retina {
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        background-size: 305px 644px;
+        background-image: url("../../img/sprite@2x.png");
+    }
+}
+
+
+// Retina sprite
+//
+// Markup:
+// .Sprite-retina;
+//
+// Styleguide 1.1.19.
+// ----------------------------------------------
+
+.Sprite-retina--transform {
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        background-size: 239px 853px;
+        background-image: url("../../img/transform/sprite@2x.png");
+    }
+}
+
+
+
+
+
+// Grid System
+// -----------
+
+// Centered container element
+.container-fixed() {
+    margin-right: auto;
+    margin-left: auto;
+    // padding-left:  (@grid-gutter-width / 2);
+    // padding-right: (@grid-gutter-width / 2);
+    &:extend(.clearfix all);
+}
+
+// Creates a wrapper for a series of columns
+.make-row(@gutter: @grid-gutter-width) {
+    @media(min-width:@screen-xs-min) {
+      margin-left:  (@gutter / -2);
+      margin-right: (@gutter / -2);
+    }
+    &:extend(.clearfix all);
+}
+
+// Generate the extra small columns
+.make-xs-column(@columns; @gutter: @grid-gutter-width) {
+    @media (min-width: @screen-xs-min) {
+        position: relative;
+        float: left;
+        width: percentage((@columns / @grid-columns));
+        min-height: 1px;
+        padding-left:  (@gutter / 2);
+        padding-right: (@gutter / 2);
+    }
+}
+.make-xs-column-offset(@columns) {
+    @media (min-width: @screen-xs-min) {
+        margin-left: percentage((@columns / @grid-columns));
+    }
+}
+.make-xs-column-push(@columns) {
+    @media (min-width: @screen-xs-min) {
+        left: percentage((@columns / @grid-columns));
+    }
+}
+.make-xs-column-pull(@columns) {
+    @media (min-width: @screen-xs-min) {
+        right: percentage((@columns / @grid-columns));
+    }
+}
+
+
+// Generate the small columns
+.make-sm-column(@columns; @gutter: @grid-gutter-width) {
+    position: relative;
+    min-height: 1px;
+
+    @media (min-width: @screen-sm-min) {
+        padding-left:  (@gutter / 2);
+        padding-right: (@gutter / 2);
+        float: left;
+        width: percentage((@columns / @grid-columns));
+    }
+}
+.make-sm-column-offset(@columns) {
+    @media (min-width: @screen-sm-min) {
+        margin-left: percentage((@columns / @grid-columns));
+    }
+}
+.make-sm-column-push(@columns) {
+    @media (min-width: @screen-sm-min) {
+        left: percentage((@columns / @grid-columns));
+    }
+}
+.make-sm-column-pull(@columns) {
+    @media (min-width: @screen-sm-min) {
+        right: percentage((@columns / @grid-columns));
+    }
+}
+
+
+// Generate the medium columns
+.make-md-column(@columns; @gutter: @grid-gutter-width) {
+    position: relative;
+    min-height: 1px;
+    @media (min-width: @screen-md-min) {
+        padding-left:  (@gutter / 2);
+        padding-right: (@gutter / 2);
+        float: left;
+        width: percentage((@columns / @grid-columns));
+    }
+}
+.make-md-column-offset(@columns) {
+    @media (min-width: @screen-md-min) {
+        margin-left: percentage((@columns / @grid-columns));
+    }
+}
+.make-md-column-push(@columns) {
+    @media (min-width: @screen-md-min) {
+        left: percentage((@columns / @grid-columns));
+    }
+}
+.make-md-column-pull(@columns) {
+    @media (min-width: @screen-md-min) {
+        right: percentage((@columns / @grid-columns));
+    }
+}
+
+
+// Generate the large columns
+.make-lg-column(@columns; @gutter: @grid-gutter-width) {
+    position: relative;
+    min-height: 1px;
+
+    @media (min-width: @screen-lg-min) {
+        padding-left:  (@gutter / 2);
+        padding-right: (@gutter / 2);
+        float: left;
+        width: percentage((@columns / @grid-columns));
+    }
+}
+.make-lg-column-offset(@columns) {
+    @media (min-width: @screen-lg-min) {
+        margin-left: percentage((@columns / @grid-columns));
+    }
+}
+.make-lg-column-push(@columns) {
+    @media (min-width: @screen-lg-min) {
+        left: percentage((@columns / @grid-columns));
+    }
+}
+.make-lg-column-pull(@columns) {
+    @media (min-width: @screen-lg-min) {
+        right: percentage((@columns / @grid-columns));
+    }
+}
+
+
+// Framework grid generation
+//
+// Used only by Bootstrap to generate the correct number of grid classes given
+// any value of `@grid-columns`.
+
+.make-grid-columns() {
+  // Common styles for all sizes of grid columns, widths 1-12
+  .col(@index) when (@index = 1) { // initial
+    @item: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}";
+    .col((@index + 1), @item);
+  }
+  .col(@index, @list) when (@index =< @grid-columns) { // general; "=<" isn't a typo
+    @item: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}";
+    .col((@index + 1), ~"@{list}, @{item}");
+  }
+  .col(@index, @list) when (@index > @grid-columns) { // terminal
+    @{list} {
+      position: relative;
+      // Prevent columns from collapsing when empty
+      min-height: 1px;
+      // Inner gutter via padding
+      padding-left:  (@grid-gutter-width / 2);
+      padding-right: (@grid-gutter-width / 2);
+    }
+  }
+  .col(1); // kickstart it
+}
+
+.float-grid-columns(@class) {
+  .col(@index) when (@index = 1) { // initial
+    @item: ~".col-@{class}-@{index}";
+    .col((@index + 1), @item);
+  }
+  .col(@index, @list) when (@index =< @grid-columns) { // general
+    @item: ~".col-@{class}-@{index}";
+    .col((@index + 1), ~"@{list}, @{item}");
+  }
+  .col(@index, @list) when (@index > @grid-columns) { // terminal
+    @{list} {
+      float: left;
+    }
+  }
+  .col(1); // kickstart it
+}
+
+.calc-grid-column(@index, @class, @type) when (@type = width) and (@index > 0) {
+  .col-@{class}-@{index} {
+    width: percentage((@index / @grid-columns));
+  }
+}
+.calc-grid-column(@index, @class, @type) when (@type = push) {
+  .col-@{class}-push-@{index} {
+    left: percentage((@index / @grid-columns));
+  }
+}
+.calc-grid-column(@index, @class, @type) when (@type = pull) {
+  .col-@{class}-pull-@{index} {
+    right: percentage((@index / @grid-columns));
+  }
+}
+.calc-grid-column(@index, @class, @type) when (@type = offset) {
+  .col-@{class}-offset-@{index} {
+    margin-left: percentage((@index / @grid-columns));
+  }
+}
+
+// Basic looping in LESS
+.loop-grid-columns(@index, @class, @type) when (@index >= 0) {
+  .calc-grid-column(@index, @class, @type);
+  // next iteration
+  .loop-grid-columns((@index - 1), @class, @type);
+}
+
+// Create grid for specific class
+.make-grid(@class) {
+  .float-grid-columns(@class);
+  .loop-grid-columns(@grid-columns, @class, width);
+  .loop-grid-columns(@grid-columns, @class, pull);
+  .loop-grid-columns(@grid-columns, @class, push);
+  .loop-grid-columns(@grid-columns, @class, offset);
+}
