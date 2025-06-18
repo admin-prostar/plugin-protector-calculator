@@ -255,11 +255,11 @@ def write_report(updates: List[dict], not_found: List[dict], report_dir: Path):
 def main():
     # Define paths relative to the parent directory
     base_path = Path(__file__).parent.parent
-    xml_path = base_path / 'other' / 'components' / 'thearchitectschoice.WordPress.2025-06-17.xml'
-    systems_xml_path = base_path / 'other' / 'systems' / 'thearchitectschoice.WordPress.2025-06-17-2.xml'
-    csv_path = base_path / 'other' / 'bunnings_items_pricing' / 'bunnings_prices.csv'
-    output_path = base_path / 'other' / 'components' / 'thearchitectschoice.WordPress.2025-06-17.updated.xml'
-    report_dir = base_path / 'other' / 'reports'
+    xml_path = base_path / 'other' / 'data' / 'AU' /'protectorfencecalculator.components.2025-06-17.xml'
+    systems_xml_path = base_path / 'other' / 'data' / 'AU' / 'protectorfencecalculator.systems.2025-06-17.xml'
+    csv_path = base_path / 'other' / 'bunnings_items_pricing' / 'bunnings_prices-AU.csv'
+    output_path = base_path / 'other' / 'data' / 'AU' / 'protectorfencecalculator.components.2025-06-17.updated.xml'
+    report_dir = base_path / 'other' / 'reports' / 'AU'
     
     # Load prices from CSV
     print("Loading prices from CSV...")
